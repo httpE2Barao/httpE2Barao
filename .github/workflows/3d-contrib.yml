@@ -1,31 +1,31 @@
 name: Atualiza 3D Contrib
 
-# agenda: todo dia à meia-noite UTC-3
 on:
   schedule:
-    - cron: '0 3 * * *'      # 0h no horário de Brasília (UTC-3)
-  workflow_dispatch:         # pra você poder rodar manualmente via Actions
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   update:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Gerar 3D Contrib
-        uses: yoshi389111/github-profile-3d-contrib@v0.9.0
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          # <— aqui, o token padrão do GitHub Actions,
-          # que só consegue ler repositórios PÚBLICOS
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          username: httpE2Barao
-          theme: night-rainbow
-          output: profile-3d-contrib
+          fetch-depth: 0
+
+      - name: Gera gráfico 3D
+        uses: yoshi389111/github-profile-3d-contrib@latest   # <-- CORREÇÃO
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME:     ${{ github.repository_owner }}
 
       - name: Commit & Push
         run: |
-          git config user.name "github-actions[bot]"
+          git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add profile-3d-contrib
           git commit -m "ci: atualiza gráfico 3D contrib" || echo "Sem mudanças"
