@@ -1,0 +1,8 @@
+# Confirma se existe .gitmodules
+Test-Path .gitmodules
+
+# Remove apenas a config do submodule
+git config -f .gitmodules --remove-section submodule.github-profile-3d-contrib
+
+# Se o .gitmodules ficar vazio, delete-o:
+if ((Get-Content .gitmodules).Length -eq 0) { Remove-Item .gitmodules }
