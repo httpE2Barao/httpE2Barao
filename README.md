@@ -1,4 +1,4 @@
-![Status](./profile-3d-contrib/profile-night-rainbow.svg)
+![Status](./github-profile-3d-contrib/profile-3d-contrib/profile-night-rainbow.svg)
 
 | [![GitHub Commits](http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=httpE2Barao&theme=dracula&utcOffset=-3)](https://github.com/httpE2Barao) | [![GitHub Details](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=httpE2Barao&theme=dracula)](https://github.com/httpE2Barao) |
 | ----------- | ----------- |
