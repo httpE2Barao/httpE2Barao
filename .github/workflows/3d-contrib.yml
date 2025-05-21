@@ -1,0 +1,25 @@
+name: Update 3D Contrib
+on:
+  schedule:
+    - cron: '0 0 * * *'    # todo dia à meia-noite
+  workflow_dispatch:
+
+jobs:
+  gen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Generate 3D contributions
+        uses: fvcproductions/profile-3d-contrib-action@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          username: httpE2Barao
+          theme: night-rainbow
+          output: profile-3d-contrib
+      - name: Commit & Push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add profile-3d-contrib
+          git commit -m "ci: update 3D contrib graph"
+          git push
