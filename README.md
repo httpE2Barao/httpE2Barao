@@ -10,7 +10,3 @@
   <img src="https://skillicons.dev/icons?i=git,vscode,javascript,typescript,css,html,react,next,tailwind,sass,nodejs,express,nest,vue,docker,figma,github,jest,materialui,linux,postman,styledcomponents,vercel,vite,bootstrap,mongodb,postgres,discord,linkedin,instagram" />
 </div>
 
-##
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=httpE2Barao&row=1&column=6&theme=dracula&margin-w=15&margin-h=15" />
-</div>
