@@ -3,8 +3,9 @@
 # 🚀 Olá, eu sou o httpE2Barao! 
 
 ### 💻 Desenvolvedor Full Stack & Engenheiro de Inteligência Artificial 🤖
+#### ⚡ Arquitetura de Software • Orquestração de IA • Métodos Ágeis • Clean Code
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=2EE59D&center=true&vcenter=true&width=580&lines=Desenvolvedor+Full+Stack+%26+Engenharia+de+IA;Criando+Sistemas+Complexos+%26+Agentes+Aut%C3%B4nomos;Next.js%2C+TypeScript%2C+Python%2C+LLMs+%26+Cloud;Transformando+Ideias+em+Softwares+de+Alto+Impacto)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=2EE59D&center=true&vcenter=true&width=660&lines=Desenvolvedor+Full+Stack+%26+Intelig%C3%AAncia+Artificial;Orquestra%C3%A7%C3%A3o+de+IA%2C+LLMs+%26+Agentes+Aut%C3%B4nomos;Arquitetura+de+Software%2C+React%2C+Next.js+%26+Node.js;Engenharia+de+Prompt%2C+Python+%26+Automa%C3%A7%C3%B5es+Web;M%C3%A9todos+%C3%81geis%2C+Clean+Code+%26+Performance)](https://git.io/typing-svg)
 
 ---
 
@@ -19,10 +20,10 @@
 
 ## 👨‍💻 Sobre Mim & Foco Técnico
 
-- 🤖 Especializado na construção de **Agentes de IA Autônomos, Integração de LLMs e Engenharia de Prompt**.
-- 🚀 Desenvolvimento de arquiteturas **Full Stack robustas** utilizando **TypeScript, Next.js, Node.js e Python**.
-- 💡 Criador de plataformas de alto nível como o **Platera** e ecossistema **E2Barao**.
-- 🎯 Foco em escalabilidade, código limpo, automação de processos complexos e UI/UX de alto padrão.
+- 🤖 **Orquestração de IA & Agentes Autônomos**: Construção e integração de soluções baseadas em LLMs, RAG, LangChain, engenharia de prompt e chamadas de ferramentas.
+- 🏗️ **Arquitetura de Software & Full Stack**: Desenvolvimento de sistemas escaláveis e de alta performance com **TypeScript, Next.js, Node.js, Python, Prisma e SQL**.
+- ⚡ **Métodos Ágeis & Engenharia**: Prática constante de Clean Code, metodologias ágeis, testes, automação de fluxos de trabalho e foco absoluto em UX/UI.
+- 💡 **Sistemas Inovadores**: Criador de projetos de alto valor como a plataforma **Platera** e ecossistema **E2Barao**.
 
 <br/>
 
