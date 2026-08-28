@@ -54,7 +54,7 @@
 
 | Projeto | Descrição | Stack Principal | Link / Status |
 | :--- | :--- | :--- | :---: |
-| **🤖 Platera** | Plataforma Web & IA para automação de processos inteligentes e gestão avançada | `Next.js 14` `TypeScript` `Python` `IA` `Tailwind` | [Acessar Site 🔗](#) |
+| **🤖 Platera** | Plataforma Web & IA para automação de processos inteligentes e gestão avançada | `Next.js 14` `TypeScript` `Python` `IA` `Tailwind` | [Acessar Site 🔗](https://platera.com.br/) |
 | **🧠 AI Agent** | Sistema autônomo de agentes inteligentes baseados em LLMs e chamadas de ferramentas | `Python` `TypeScript` `LangChain` `APIs de IA` | `🔒 Sistema Privado / Enterprise` |
 | **🌐 E2Barao** | Plataforma oficial de portfólio profissional e vitrine de engenharia web | `Next.js` `TypeScript` `React` `Tailwind` | [Acessar Site 🔗](https://E2-Barao.vercel.app) |
 | **📊 Gerador de Relatórios** | Aplicação inteligente para compilação e automação de relatórios | `TypeScript` `React` `Node.js` `Tailwind` | [Acessar Site 🔗](https://gerador-relatorio-divulgacao.vercel.app) |
