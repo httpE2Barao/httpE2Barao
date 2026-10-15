@@ -5,7 +5,7 @@
 ### 💻 Desenvolvedor Full Stack & Engenheiro de Inteligência Artificial 🤖
 #### ⚡ Arquitetura de Software • Orquestração de IA • Métodos Ágeis • Clean Code
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=2EE59D&center=true&vcenter=true&width=660&lines=Desenvolvedor+Full+Stack+%26+Intelig%C3%AAncia+Artificial;Orquestra%C3%A7%C3%A3o+de+IA%2C+LLMs+%26+Agentes+Aut%C3%B4nomos;Arquitetura+de+Software%2C+React%2C+Next.js+%26+Node.js;Engenharia+de+Prompt%2C+Python+%26+Automa%C3%A7%C3%B5es+Web;M%C3%A9todos+%C3%81geis%2C+Clean+Code+%26+Performance)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=2EE59D&center=true&vcenter=true&width=660&lines=Desenvolvedor+Full+Stack+%26+Intelig%C3%AAncia+Artificial;Orquestra%C3%A7%C3%A3o+de+IA%2C+LLMs+%26+Agentes+Aut%C3%B4nomos;Arquitetura+de+Software%2C+TypeScript+%26+Next.js;Engenharia+de+Prompt%2C+Python+%26+Automa%C3%A7%C3%B5es+Web;M%C3%A9todos+%C3%81geis%2C+Clean+Code+%26+Performance)](https://git.io/typing-svg)
 
 ---
 
