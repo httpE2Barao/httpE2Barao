@@ -67,8 +67,8 @@
 ## 📊 Estatísticas
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=httpE2Barao&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="Estatisticas GitHub" height="165" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=httpE2Barao&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="Linguagens mais usadas" height="165" />
+  <img src="./profile-cards/stats.svg" alt="Estatisticas GitHub" height="165" />
+  <img src="./profile-cards/top-langs.svg" alt="Linguagens mais usadas" height="165" />
 </div>
 
 <br/>
