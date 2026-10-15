@@ -23,7 +23,7 @@
 - 🤖 **Orquestração de IA & Agentes Autônomos**: Construção e integração de soluções baseadas em LLMs, RAG, LangChain, engenharia de prompt e chamadas de ferramentas.
 - 🏗️ **Arquitetura de Software & Full Stack**: Desenvolvimento de sistemas escaláveis e de alta performance com **TypeScript, Next.js, Node.js, Python, Prisma e SQL**.
 - ⚡ **Métodos Ágeis & Engenharia**: Prática constante de Clean Code, metodologias ágeis, testes, automação de fluxos de trabalho e foco absoluto em UX/UI.
-- 💡 **Sistemas Inovadores**: Criador de projetos de alto valor como a plataforma **Platera** e ecossistema **E2Barao**.
+- 💡 **Sistemas Inovadores**: Criador de projetos de alto valor como a plataforma **Platera - Restaurantes**, **Enriquecimento cadastral** ambos omnichannel em seus próprios nichos.
 
 <br/>
 
