@@ -9,8 +9,13 @@ Idempotente: rodar 2x nao muda nada na segunda vez. So remove barras planas
 (nivel 0) cuja data reconstruida pela geometria e' posterior a hoje, entao
 dias passados sem contribuicao sao preservados.
 
+Tambem troca o rodape de stars/forks (icone estrela + garfo, que ficam
+zerados) por "N followers · M repos", com valores passados via
+--followers/--repos (omitidos = mantem o rodape original).
+
 Uso:
-    python3 .github/scripts/trim-future.py --year 2026 profile-3d-contrib
+    python3 .github/scripts/trim-future.py --year 2026 \
+        --followers 6 --repos 32 profile-3d-contrib
 """
 
 import argparse
@@ -36,13 +41,42 @@ FLAT_HEIGHT = 3.0  # calHeight de um dia com 0 contribuicoes
 BAR_RE = re.compile(r'<g transform="translate\(([0-9.]+) ([0-9.]+)\)">(.*?)</g>', re.DOTALL)
 PERIOD_RE = re.compile(r"(\d{4}-\d{2}-\d{2}) / (\d{4}-\d{2}-\d{2})")
 
+# Rodape: posicoes fixas vindas de src/create-svg.ts (width=1280).
+# icone estrela em translate(608, 802), numero em x=650;
+# icone garfo em translate(736, 802), numero em x=772.
+STAR_ICON_RE = re.compile(r'<g transform="translate\(608, 802\), scale\(2\)">.*?</g>', re.DOTALL)
+FORK_ICON_RE = re.compile(r'<g transform="translate\(736, 802\), scale\(2\)">.*?</g>', re.DOTALL)
+STAR_TEXT_RE = re.compile(r'<text[^>]*x="650"[^>]*>.*?</text>', re.DOTALL)
+FORK_TEXT_RE = re.compile(r'<text[^>]*x="772"[^>]*>.*?</text>', re.DOTALL)
+
+
+def patch_footer(text: str, followers: int, repos: int) -> tuple[str, bool]:
+    """Troca star/fork por 'N followers · M repos'. Retorna (texto, mudou)."""
+    if "translate(608, 802)" not in text:
+        return text, False  # rodape ja trocado (idempotente)
+    combo = (
+        f'<text style="font-size: 24px;" x="596" y="830" text-anchor="start" '
+        f'class="fill-fg"><tspan style="font-weight: bold;">{followers}</tspan>'
+        f" followers · "
+        f'<tspan style="font-weight: bold;">{repos}</tspan> repos'
+        f"<title>{followers} followers · {repos} repos</title></text>"
+    )
+    new_text = STAR_ICON_RE.sub("", text)
+    new_text = FORK_ICON_RE.sub("", new_text)
+    new_text, n_star = STAR_TEXT_RE.subn(combo, new_text, count=1)
+    new_text, n_fork = FORK_TEXT_RE.subn("", new_text, count=1)
+    changed = ("translate(608, 802)" not in new_text) and (n_star == 1) and (n_fork == 1)
+    return new_text, changed
+
 
 def js_dow(d: date) -> int:
     """Dia da semana no padrao JS getUTCDay(): dom=0 .. sab=6."""
     return (d.weekday() + 1) % 7
 
 
-def process_file(svg_path: Path, year: int) -> tuple[int, bool]:
+def process_file(
+    svg_path: Path, year: int, followers: int | None = None, repos: int | None = None
+) -> tuple[int, bool, bool]:
     text = svg_path.read_text(encoding="utf-8")
 
     first = date(year, 1, 1)
@@ -96,14 +130,20 @@ def process_file(svg_path: Path, year: int) -> tuple[int, bool]:
 
     new_text = PERIOD_RE.sub(fix_period, new_text)
 
+    footer_updated = False
+    if followers is not None and repos is not None:
+        new_text, footer_updated = patch_footer(new_text, followers, repos)
+
     if new_text != text:
         svg_path.write_text(new_text, encoding="utf-8")
-    return removed, period_updated
+    return removed, period_updated, footer_updated
 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--year", type=int, required=True)
+    ap.add_argument("--followers", type=int, default=None)
+    ap.add_argument("--repos", type=int, default=None)
     ap.add_argument("directory", type=Path)
     args = ap.parse_args()
 
@@ -114,16 +154,15 @@ def main() -> int:
 
     total_removed = 0
     for svg in svgs:
-        removed, period = process_file(svg, args.year)
+        removed, period, footer = process_file(svg, args.year, args.followers, args.repos)
         total_removed += removed
-        print(f"{svg.name}: removidas={removed} periodo_ate_hoje={period}")
+        print(f"{svg.name}: removidas={removed} periodo_ate_hoje={period} rodape={footer}")
 
-    # Sanity check: o principal continua sendo XML valido.
+    # Sanity check: todos continuam sendo XML valido.
     import xml.dom.minidom
 
-    main_svg = args.directory / "profile-night-green.svg"
-    if main_svg.exists():
-        xml.dom.minidom.parse(str(main_svg))
+    for svg in svgs:
+        xml.dom.minidom.parse(str(svg))
     print(f"hoje={TODAY} total_removidas={total_removed}")
     return 0
 

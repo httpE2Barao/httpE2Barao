@@ -34,8 +34,18 @@ jobs:
           USERNAME: ${{ github.repository_owner }}
           YEAR: ${{ env.YEAR }}
 
-      - name: Recorta dias futuros (grafico termina hoje)
-        run: python3 .github/scripts/trim-future.py --year "${{ env.YEAR }}" profile-3d-contrib/
+      - name: Busca metricas do perfil (seguidores + repos)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "FOLLOWERS=$(gh api users/${{ github.repository_owner }} --jq .followers)" >> "$GITHUB_ENV"
+          echo "REPOS=$(gh api users/${{ github.repository_owner }} --jq .public_repos)" >> "$GITHUB_ENV"
+
+      - name: Recorta dias futuros e troca rodape (termina hoje)
+        run: >
+          python3 .github/scripts/trim-future.py --year "${{ env.YEAR }}"
+          --followers "${{ env.FOLLOWERS }}" --repos "${{ env.REPOS }}"
+          profile-3d-contrib/
 
       - name: Commit e Push dos gráficos atualizados
         run: |
