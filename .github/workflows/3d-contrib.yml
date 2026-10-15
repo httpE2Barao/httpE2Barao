@@ -34,6 +34,9 @@ jobs:
           USERNAME: ${{ github.repository_owner }}
           YEAR: ${{ env.YEAR }}
 
+      - name: Recorta dias futuros (grafico termina hoje)
+        run: python3 .github/scripts/trim-future.py --year "${{ env.YEAR }}" profile-3d-contrib/
+
       - name: Commit e Push dos gráficos atualizados
         run: |
           git config user.name 'github-actions[bot]'

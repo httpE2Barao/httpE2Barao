@@ -63,10 +63,10 @@
 
 ---
 
-## 📊 Gráfico de Contribuições 3D (2026)
+## 📊 Gráfico de Contribuições 3D (até hoje)
 
 <div align="center">
-  <img src="./profile-3d-contrib/profile-night-green.svg" alt="3D Contribution Graph 2026" width="100%" />
+  <img src="./profile-3d-contrib/profile-night-green.svg" alt="3D Contribution Graph ate hoje" width="100%" />
 </div>
 
 <br/>
