@@ -1,0 +1,54 @@
+name: Atualiza Stats Cards
+
+on:
+  schedule:
+    # 2x/dia fora do pico (00:27 e 12:27 BRT). Nao coincide com o 3D de proposito.
+    - cron: '27 3,15 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stats-cards
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Gera card de stats (inclui privados via STATS_PAT)
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: stats
+          options: username=${{ github.repository_owner }}&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&contribs_include_own_repos=true
+          path: profile-cards/stats.svg
+          token: ${{ secrets.STATS_PAT }}
+          fail_on_error: true
+
+      - name: Gera card de top linguagens
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: top-langs
+          options: username=${{ github.repository_owner }}&layout=compact&langs_count=6&theme=tokyonight&hide_border=true&bg_color=0D1117
+          path: profile-cards/top-langs.svg
+          token: ${{ secrets.STATS_PAT }}
+          fail_on_error: true
+
+      - name: Commit e Push dos cards atualizados
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git pull --rebase --autostash || true
+          git add -A profile-cards/
+          if git diff --staged --quiet; then
+            echo "Sem mudancas nos cards — nada a commitar."
+          else
+            git commit -m "chore: update stats cards [skip ci]" && git push
+          fi
