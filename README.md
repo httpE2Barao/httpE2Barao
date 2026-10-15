@@ -23,7 +23,7 @@
 - 🤖 **Orquestração de IA & Agentes Autônomos**: Construção e integração de soluções baseadas em LLMs, RAG, LangChain, engenharia de prompt e chamadas de ferramentas.
 - 🏗️ **Arquitetura de Software & Full Stack**: Desenvolvimento de sistemas escaláveis e de alta performance com **TypeScript, Next.js, Node.js, Python, Prisma e SQL**.
 - ⚡ **Métodos Ágeis & Engenharia**: Prática constante de Clean Code, metodologias ágeis, testes, automação de fluxos de trabalho e foco absoluto em UX/UI.
-- 💡 **Sistemas Inovadores**: Criador de projetos de alto valor como a plataforma **Platera - Restaurantes**, **Enriquecimento cadastral** ambos omnichannel em seus próprios nichos.
+- 💡 **Sistemas Inovadores**: Criador de produtos de alto valor como a plataforma **Platera – Restaurantes** e o **Enriquecimento Cadastral**, ambos omnichannel e referência em seus nichos.
 
 <br/>
 
@@ -54,10 +54,22 @@
 
 | Projeto | Descrição | Stack Principal | Link / Status |
 | :--- | :--- | :--- | :---: |
-| **🤖 Platera** | Plataforma Web & IA para automação de processos inteligentes e gestão avançada | `Next.js 14` `TypeScript` `Python` `IA` `Tailwind` | [Acessar Site 🔗](https://platera.com.br/) |
+| **🍽️ Platera – Restaurantes** | Plataforma omnichannel para restaurantes com automação inteligente e IA | `Next.js 14` `TypeScript` `Python` `IA` `Tailwind` | [Acessar Site 🔗](https://platera.com.br/) |
+| **🧾 Enriquecimento Cadastral** | Plataforma omnichannel de enriquecimento e qualificação de dados cadastrais | `Next.js` `TypeScript` `Python` `IA` | `🔒 Sistema Privado / Enterprise` |
 | **🧠 AI Agent** | Sistema autônomo de agentes inteligentes baseados em LLMs e chamadas de ferramentas | `Python` `TypeScript` `LangChain` `APIs de IA` | `🔒 Sistema Privado / Enterprise` |
 | **🌐 E2Barao** | Plataforma oficial de portfólio profissional e vitrine de engenharia web | `Next.js` `TypeScript` `React` `Tailwind` | [Acessar Site 🔗](https://E2-Barao.vercel.app) |
 | **📊 Gerador de Relatórios** | Aplicação inteligente para compilação e automação de relatórios | `TypeScript` `React` `Node.js` `Tailwind` | [Acessar Site 🔗](https://gerador-relatorio-divulgacao.vercel.app) |
+
+<br/>
+
+---
+
+## 📊 Estatísticas
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=httpE2Barao&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="Estatisticas GitHub" height="165" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=httpE2Barao&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="Linguagens mais usadas" height="165" />
+</div>
 
 <br/>
 
